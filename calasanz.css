@@ -1,18 +1,41 @@
  /*selector de etiqueta*/
  h1{
-    color:red;
+    color:rgb(122, 114, 114);
 }
 h2{
-    color:blue;
+    color:rgb(110, 105, 105);
 }
 /*selector de clase */
 oscuro{
-    background-color: black;
-    color:white;
+    background-color: rgb(131, 124, 124);
+    color:rgb(121, 114, 114);
 }
 /*selector id */
 #Biografia{
-    background-color:aqua;
+    background-color:rgb(255, 197, 88);
     color:black;
 }
 /*selector id */
+footer {
+    background-color: #8b5e3c;
+    color: #000000;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin: 0 0.5rem; 
+    font-size: 1.8rem; 
+    display: inline-block; 
+  }
+  
+  footer a:hover {
+    color: gold;
+  }
+  header {
+    background-image: url("./fondo\ claro.png");
+  }
