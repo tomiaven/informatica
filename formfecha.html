@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de usuario</title>
+</head>
+<body>
+    <form>
+        <h1>Registro de usuario</h1>
+        <label for"Nombre">Nombre de usuario:</label>
+        <input type="text" id="Nombre" required><br>
+        <label for"fecha"> Fecha de nacimiento</label>
+        <input type="date" id="fecha" required><br>
+        <button onclick="registrar()">Enviar</button>
+    </form>
+    <script>
+        function registrar(){
+            let usuario= document.getElementById("Nombre").value;
+            let nac= new Date(document.getElementById("fecha").value);
+            let hoy= new Date();
+            alert("Hoy=" + hoy + "fecha de nacimiento" + nac);
+            let edad= hoy.getFullYear();-nac.getFullYear();
+            alert("Hola," + usuario + ",tu edad es :" + edad);
+        }
+    </script>
+</body>
+</html>
