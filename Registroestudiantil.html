@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Estudiante</title>
+</head>
+<body>
+    <h1>Registro de Estudiante</h1>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre"><br><br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido"><br><br>
+    <label for="curso">Curso:</label>
+    <input type="text" id="curso"><br><br>
+
+    <button onclick="registrarYSaludar()">Mostrar Saludo</button>
+
+    <script>
+        function registrarYSaludar() {
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            const curso = document.getElementById('curso').value;
+
+            if (nombre && apellido && curso) {
+                // Guarda en localStorage
+                localStorage.setItem('estudianteNombre', nombre);
+                localStorage.setItem('estudianteApellido', apellido);
+                localStorage.setItem('estudianteCurso', curso);
+                
+                // Abre la nueva página (asegúrate de que saludo_estudiante.html exista)
+                window.open('saludo_estudiante.html', '_blank');
+            } else {
+                alert("Por favor, completa todos los campos.");
+            }
+        }
+    </script>
+</body>
+</html>
