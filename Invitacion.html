@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Invitación Fiesta</title>
+</head>
+<body>
+    <h1>Registro de Asistencia a la Fiesta</h1>
+    <button onclick="capturarAsistencia()">Confirmar Asistencia</button>
+    <p id="resultadoAsistencia"></p>
+
+    <script>
+        function capturarAsistencia() {
+            const nombre = prompt("Ingresa tu nombre:");
+            
+            if (nombre === null || nombre.trim() === "") {
+                document.getElementById('resultadoAsistencia').textContent = "Captura cancelada o nombre no ingresado.";
+                return;
+            }
+
+            let asistencia = prompt(`Hola ${nombre}, ¿Asistirás a la fiesta de fin de año? (Si/No)`).toLowerCase();
+            
+            let mensaje;
+            if (asistencia === 'si' || asistencia === 's') {
+                mensaje = `¡Gracias, **${nombre}**! Estás en la lista. ¡Nos vemos en la fiesta! 🎉`;
+            } else if (asistencia === 'no' || asistencia === 'n') {
+                 mensaje = `De acuerdo, **${nombre}**. Lamentamos que no asistas.`;
+            } else {
+                 mensaje = `**${nombre}**, no pudimos entender tu respuesta. Por favor, intenta de nuevo.`;
+            }
+
+            document.getElementById('resultadoAsistencia').innerHTML = mensaje;
+        }
+    </script>
+</body>
+</html>
