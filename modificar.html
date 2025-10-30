@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cambiador de Colores</title>
+    <style>
+        body { transition: background-color 0.5s; }
+        h1 { transition: color 0.5s; }
+    </style>
+</head>
+<body id="cuerpo">
+    <h1 id="titulo">Presiona un botón para cambiar los colores</h1>
+
+    <button onclick="cambiarColor('azul')">Azul Clásico</button>
+    <button onclick="cambiarColor('verde')">Verde Naturaleza</button>
+    <button onclick="cambiarColor('rojo')">Rojo Pasión</button>
+
+    <script>
+        function cambiarColor(color) {
+            const cuerpo = document.getElementById('cuerpo');
+            const titulo = document.getElementById('titulo');
+
+            switch (color) {
+                case 'azul':
+                    cuerpo.style.backgroundColor = '#007bff';
+                    titulo.style.color = 'white';
+                    break;
+                case 'verde':
+                    cuerpo.style.backgroundColor = '#28a745';
+                    titulo.style.color = '#333';
+                    break;
+                case 'rojo':
+                    cuerpo.style.backgroundColor = '#dc3545';
+                    titulo.style.color = 'yellow';
+                    break;
+            }
+        }
+    </script>
+</body>
+</html>
