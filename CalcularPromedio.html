@@ -2,38 +2,39 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Cálculo de Promedio</title>
+    <title>Calcular Promedio</title>
 </head>
 <body>
-    <h1>Cálculo de Promedio Simple</h1>
-    <button onclick="calcularPromedioSimple()">Calcular Promedio</button>
-    <p id="resultadoPromedioSimple"></p>
+    <h1>Calculadora de Promedio</h1>
+    <button id="btnCalcular">Calcular promedio</button>
+    <p id="resultadoPromedio"></p>
 
     <script>
-        function calcularPromedioSimple() {
+        const boton = document.getElementById('btnCalcular');
+        const resultadoElemento = document.getElementById('resultadoPromedio');
+
+        boton.addEventListener('click', function() {
             const n1 = parseFloat(prompt("Ingresa la Nota 1:"));
             const n2 = parseFloat(prompt("Ingresa la Nota 2:"));
             const n3 = parseFloat(prompt("Ingresa la Nota 3:"));
-            
-            const resultadoElemento = document.getElementById('resultadoPromedioSimple');
-            
-            if (isNaN(n1) || isNaN(n2) || isNaN(n3)) {
-                resultadoElemento.textContent = "Error: Debes ingresar tres números válidos.";
+
+            if (isNaN(n1) || isNaN(n2) || isNaN(n3) || n1 < 0 || n2 < 0 || n3 < 0) {
+                resultadoElemento.textContent = "Error: Ingresa tres valores numéricos válidos.";
                 return;
             }
 
             const promedio = (n1 + n2 + n3) / 3;
             const promedioRedondeado = promedio.toFixed(2);
-            
-            let resultado;
-            if (promedio >= 6) { 
-                resultado = `Promedio: **${promedioRedondeado}**. Estudiante **APRUEBA** ✅.`;
+
+            let mensaje;
+            if (promedio >= 6) {
+                mensaje = `¡Aprobado! 🥳 Promedio: **${promedioRedondeado}**.`;
             } else {
-                resultado = `Promedio: **${promedioRedondeado}**. Estudiante **NO APRUEBA** ❌.`;
+                mensaje = `Desaprobado. 😢 Promedio: **${promedioRedondeado}**.`;
             }
 
-            resultadoElemento.innerHTML = resultado;
-        }
+            resultadoElemento.innerHTML = mensaje;
+        });
     </script>
 </body>
 </html>
