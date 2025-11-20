@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Días Faltantes</title>
+</head>
+<body>
+
+    <h2>¿Cuánto falta?</h2>
+    <label>Nombre del Evento:</label>
+    <input type="text" id="evento" placeholder="Ej: Mi cumpleaños">
+    <br>
+    <label>Fecha del Evento:</label>
+    <input type="date" id="fecha">
+    <br>
+    <button onclick="calcularDias()">Calcular</button>
+
+    <h3 id="resultado"></h3>
+
+    <script>
+        function calcularDias() {
+           
+            const nombreEvento = document.getElementById('evento').value;
+            const fechaEventoTexto = document.getElementById('fecha').value; // 'YYYY-MM-DD'
+
+         
+            const hoy = new Date();
+           
+            hoy.setHours(0, 0, 0, 0);
+           
+           
+            const partes = fechaEventoTexto.split('-');
+            const fechaEvento = new Date(partes[0], partes[1] - 1, partes[2]);
+
+           
+            const diffMs = fechaEvento.getTime() - hoy.getTime();
+
+           
+            const diffDias = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+           
+            const resultado = document.getElementById('resultado');
+            if (diffDias > 0) {
+                resultado.innerText = "Faltan " + diffDias + " días para '" + nombreEvento + "'.";
+            } else if (diffDias === 0) {
+                resultado.innerText = "¡'" + nombreEvento + "' es HOY!";
+            } else {
+                resultado.innerText = "El evento '" + nombreEvento + "' ya ocurrió.";
+            }
+        }
+    </script>
+
+</body>
+</html>

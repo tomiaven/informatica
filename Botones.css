@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    transition: background-color 0.5s, color 0.5s; /* Transición cambio */
+    background-color: white; /* Color inicial */
+    color: black; /* Color inicial */
+}
+
+h1 {
+    margin-bottom: 30px;
+}
+
+.botones button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    font-size: 1em;
+    cursor: pointer;
+    border: 1px solid #333;
+    border-radius: 5px;
+}
+
+p {
+    margin-top: 20px;
+    max-width: 600px;
+    text-align: center;
+}
